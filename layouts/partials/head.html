@@ -32,11 +32,13 @@
 <!-- Fonts -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="{{ .Site.Params.googleFontsUrl }}">
+<link rel="preload" as="style" href="{{ .Site.Params.googleFontsUrl }}">
+<link rel="stylesheet" href="{{ .Site.Params.googleFontsUrl }}" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="{{ .Site.Params.googleFontsUrl }}"></noscript>
 
 <!-- Styles -->
-{{- $css := resources.Get "css/main.css" | minify | fingerprint }}
-<link rel="stylesheet" href="{{ $css.RelPermalink }}" integrity="{{ $css.Data.Integrity }}">
+{{- $css := resources.Get "css/main.css" | minify }}
+<style>{{ $css.Content | safeCSS }}</style>
 
 {{- /* Structured data */}}
 {{ partial "schema.html" . }}
