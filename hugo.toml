@@ -1,7 +1,6 @@
 baseURL = "https://www.carterlawchicago.com/"
 languageCode = "en-us"
 title = "Carter Law Group | Chicago Attorney Daniel Carter"
-theme = ""
 enableRobotsTXT = true
 disableKinds = ["taxonomy", "term", "RSS"]
 summarylength = 30
