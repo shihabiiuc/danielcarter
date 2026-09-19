@@ -1,0 +1,72 @@
+- slug: personal-injury
+  number: "01"
+  title: "Personal Injury"
+  summary: "Representing people hurt by someone else's negligence, from car crashes to slip-and-fall injuries."
+  description: >
+    When an injury upends your income, your mobility, or your peace of mind, insurance
+    adjusters move fast to minimize what they owe. Daniel builds cases early — securing
+    scene evidence, medical records, and witness statements before they disappear — and
+    negotiates from a position backed by trial-ready preparation.
+  bullets:
+    - "Auto, motorcycle, and pedestrian collisions"
+    - "Slip, trip, and premises liability claims"
+    - "Negotiation with insurance carriers and, when necessary, litigation"
+  icon: "injury"
+
+- slug: criminal-defense
+  number: "02"
+  title: "Criminal Defense"
+  summary: "Defending clients facing misdemeanor and felony charges throughout Cook County courts."
+  description: >
+    An arrest is not a conviction. Daniel scrutinizes the state's evidence, challenges
+    procedural missteps, and works to keep a single charge from defining a client's
+    future — whether that means a dismissal, a favorable plea, or a not-guilty verdict
+    at trial.
+  bullets:
+    - "DUI and traffic offenses"
+    - "Drug charges and weapons offenses"
+    - "Assault, theft, and white-collar allegations"
+  icon: "scale"
+
+- slug: family-law
+  number: "03"
+  title: "Family Law"
+  summary: "Guiding clients through divorce, custody, and support matters with a steady hand."
+  description: >
+    Family cases carry weight that ordinary contract disputes don't. Daniel prioritizes
+    clear-eyed strategy and, where possible, negotiated settlements that protect
+    children and reduce long-term conflict — while preparing every file as if it will
+    be tried.
+  bullets:
+    - "Divorce and legal separation"
+    - "Child custody, support, and parenting plans"
+    - "Post-decree modifications and enforcement"
+  icon: "family"
+
+- slug: estate-planning
+  number: "04"
+  title: "Estate Planning"
+  summary: "Wills, trusts, and powers of attorney built around your family's actual circumstances."
+  description: >
+    A template will downloaded online rarely matches a real family's situation. Daniel
+    drafts plans that account for blended families, closely held businesses, and
+    out-of-state property — then revisits them as life changes.
+  bullets:
+    - "Wills and revocable living trusts"
+    - "Powers of attorney and healthcare directives"
+    - "Probate and estate administration"
+  icon: "document"
+
+- slug: business-law
+  number: "05"
+  title: "Business & Contracts"
+  summary: "Formation, contracts, and dispute resolution for owners of closely held businesses."
+  description: >
+    Most business disputes are cheaper to prevent than to litigate. Daniel reviews and
+    drafts the agreements that hold a business together, and steps in decisively when a
+    partner, vendor, or client stops honoring their end of the deal.
+  bullets:
+    - "Entity formation and operating agreements"
+    - "Contract drafting, review, and negotiation"
+    - "Partnership and vendor disputes"
+  icon: "briefcase"

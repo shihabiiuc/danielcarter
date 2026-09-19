@@ -1,0 +1,59 @@
+baseURL = "https://www.carterlawchicago.com/"
+languageCode = "en-us"
+title = "Carter Law Group | Chicago Attorney Daniel Carter"
+theme = ""
+enableRobotsTXT = true
+disableKinds = ["taxonomy", "term", "RSS"]
+summarylength = 30
+
+[pagination]
+  pagerSize = 6
+
+[params]
+  firmName        = "Carter Law Group"
+  attorneyName    = "Daniel R. Carter"
+  attorneyTitle   = "Founding Attorney"
+  tagline         = "Deliberate counsel. Decisive results."
+  description     = "Carter Law Group is a Chicago litigation and counsel practice led by attorney Daniel Carter, serving individuals, families, and businesses across Cook County."
+  phoneDisplay    = "(312) 555-0148"
+  phoneHref       = "+13125550148"
+  email           = "contact@carterlawchicago.com"
+  addressStreet   = "500 W. Jackson Boulevard, Suite 1140"
+  addressCity     = "Chicago, IL 60661"
+  hoursWeekday    = "Monday – Friday: 8:30 AM – 6:00 PM"
+  hoursWeekend    = "Saturday: By appointment only"
+  barAdmission    = "Licensed in Illinois · U.S. District Court, N.D. Illinois"
+  founded         = "2011"
+  ogImage         = "/images/hero-courthouse.webp"
+  linkedin        = "https://www.linkedin.com/"
+  googleFontsUrl  = "https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Public+Sans:wght@400;500;600;700&display=swap"
+
+[[menu.main]]
+  name = "Home"
+  url = "/"
+  weight = 1
+
+[[menu.main]]
+  name = "About Daniel"
+  url = "/about/"
+  weight = 2
+
+[[menu.main]]
+  name = "Practice Areas"
+  url = "/practice-areas/"
+  weight = 3
+
+[[menu.main]]
+  name = "Results"
+  url = "/testimonials/"
+  weight = 4
+
+[[menu.main]]
+  name = "Contact"
+  url = "/contact/"
+  weight = 5
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true

@@ -1,0 +1,55 @@
+{{ define "main" }}
+
+<section class="page-banner" style="background-image:url('{{ .Params.banner_image }}');">
+  <div class="wrap">
+    <div class="breadcrumb"><a href="/">Home</a> <span>/</span> <span>Results</span></div>
+    <p class="eyebrow eyebrow--light">Client Experiences</p>
+    <h1>{{ .Title }}</h1>
+    <p class="page-banner__lead">{{ .Params.lead }}</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="section-head center">
+      <p class="eyebrow">In Their Words</p>
+      <h2>Client Testimonials</h2>
+    </div>
+    <div class="testi-grid">
+      {{ range .Site.Data.testimonials }}
+      <div class="testi-card">
+        <span class="testi-card__quote-icon">{{ partial "icon.html" "quote" }}</span>
+        <div class="testi-card__stars">
+          {{ range seq .rating }}{{ partial "icon.html" "star" }}{{ end }}
+        </div>
+        <p class="testi-card__text">&ldquo;{{ .quote }}&rdquo;</p>
+        <span class="testi-card__name">{{ .name }}</span>
+        <span class="testi-card__context">{{ .context }}</span>
+      </div>
+      {{ end }}
+    </div>
+  </div>
+</section>
+
+<section class="section section--paper2">
+  <div class="wrap">
+    <div class="section-head center">
+      <p class="eyebrow">By The Numbers</p>
+      <h2>Case Results</h2>
+    </div>
+    <div class="results-grid">
+      {{ range .Site.Data.case_results }}
+      <div class="result-card">
+        <div class="result-card__amount">{{ .amount }}</div>
+        <div class="result-card__label">{{ .label }}</div>
+        <p class="result-card__detail">{{ .detail }}</p>
+      </div>
+      {{ end }}
+    </div>
+    <div class="disclaimer-box">{{ .Params.disclaimer }}</div>
+  </div>
+</section>
+
+{{ partial "cta-band.html" . }}
+
+{{ end }}

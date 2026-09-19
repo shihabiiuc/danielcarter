@@ -1,0 +1,46 @@
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+{{- $description := .Params.description | default .Site.Params.description }}
+{{- $title := .Title }}
+{{- if .IsHome }}{{ $title = .Site.Title }}{{ else }}{{ $title = printf "%s | %s" .Title .Site.Params.firmName }}{{ end }}
+<title>{{ $title }}</title>
+<meta name="description" content="{{ $description }}">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="{{ .Permalink }}">
+<meta name="theme-color" content="#0f1d2e">
+
+<!-- Open Graph -->
+<meta property="og:type" content="{{ if .IsHome }}website{{ else }}article{{ end }}">
+<meta property="og:title" content="{{ $title }}">
+<meta property="og:description" content="{{ $description }}">
+<meta property="og:url" content="{{ .Permalink }}">
+<meta property="og:site_name" content="{{ .Site.Params.firmName }}">
+<meta property="og:image" content="{{ .Site.Params.ogImage | absURL }}">
+<meta property="og:locale" content="en_US">
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="{{ $title }}">
+<meta name="twitter:description" content="{{ $description }}">
+<meta name="twitter:image" content="{{ .Site.Params.ogImage | absURL }}">
+
+<!-- Icons -->
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="alternate icon" href="/favicon.ico">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="{{ .Site.Params.googleFontsUrl }}">
+
+<!-- Styles -->
+{{- $css := resources.Get "css/main.css" | minify | fingerprint }}
+<link rel="stylesheet" href="{{ $css.RelPermalink }}" integrity="{{ $css.Data.Integrity }}">
+
+{{- /* Structured data */}}
+{{ partial "schema.html" . }}
+
+{{ if .OutputFormats.Get "rss" }}{{ with .OutputFormats.Get "rss" }}
+<link rel="alternate" type="application/rss+xml" href="{{ .Permalink }}" title="{{ $.Site.Title }}">
+{{ end }}{{ end }}

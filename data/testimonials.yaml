@@ -1,0 +1,47 @@
+- name: "Marcus T."
+  context: "Personal Injury Client"
+  quote: >
+    Daniel called me back the same day I reached out, which is more than I can say for
+    the first attorney I contacted. He walked me through what my case was actually
+    worth before the insurance company had a chance to lowball me, and he was right.
+  rating: 5
+
+- name: "Renata S."
+  context: "Family Law Client"
+  quote: >
+    Divorce is not something you plan for, and I didn't know what to expect. Daniel
+    was direct about what was realistic and what wasn't, which I needed more than
+    someone telling me what I wanted to hear. We settled without a drawn-out fight.
+  rating: 5
+
+- name: "James O., Owner — Ophelia's Kitchen Supply"
+  context: "Business Law Client"
+  quote: >
+    We hired Daniel to rewrite our vendor agreements after a supplier dispute cost us
+    real money. Two years later those same contracts have kept three separate
+    disagreements out of court entirely.
+  rating: 5
+
+- name: "Priya K."
+  context: "Estate Planning Client"
+  quote: >
+    My parents' will was written in 1994 and didn't account for anything about our
+    family now. Daniel rebuilt it in a way that actually made sense for us, and
+    explained every decision in plain language.
+  rating: 5
+
+- name: "D. Whitfield"
+  context: "Criminal Defense Client"
+  quote: >
+    I was facing a charge that could have cost me my job. Daniel found a procedural
+    issue with how the stop was conducted that the prosecutor hadn't considered, and
+    the case was dismissed before it reached trial.
+  rating: 5
+
+- name: "Alicia M."
+  context: "Personal Injury Client"
+  quote: >
+    After my accident I had no idea whether to talk to the other driver's insurance
+    company. Daniel took that entire burden off my plate and kept me updated every
+    step of the way.
+  rating: 5

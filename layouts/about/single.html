@@ -1,0 +1,83 @@
+{{ define "main" }}
+
+<section class="page-banner" style="background-image:url('{{ .Params.banner_image }}');">
+  <div class="wrap">
+    <div class="breadcrumb"><a href="/">Home</a> <span>/</span> <span>About</span></div>
+    <p class="eyebrow eyebrow--light">{{ .Site.Params.attorneyTitle }}</p>
+    <h1>{{ .Title }}</h1>
+    <p class="page-banner__lead">A closer look at the attorney behind Carter Law Group &mdash; his background, his approach, and why he built the firm the way he did.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap intro">
+    <div class="intro__media">
+      <img src="{{ .Params.portrait }}" alt="{{ .Params.portrait_alt }}" width="700" height="933">
+    </div>
+    <div class="intro__body">
+      <p class="eyebrow">Background</p>
+      <h2>{{ .Site.Params.attorneyName }}</h2>
+      {{ .Content }}
+      <div class="intro__quote">&ldquo;{{ .Params.pull_quote }}&rdquo;</div>
+    </div>
+  </div>
+</section>
+
+<section class="section section--paper2">
+  <div class="wrap">
+    <div class="section-head center">
+      <p class="eyebrow">Career Timeline</p>
+      <h2>How the Practice Was Built</h2>
+    </div>
+    <ol class="timeline">
+      {{ range .Params.timeline }}
+      <li class="timeline__item">
+        <span class="timeline__year">{{ .year }}</span>
+        <p class="timeline__text">{{ .text }}</p>
+      </li>
+      {{ end }}
+    </ol>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="section-head center">
+      <p class="eyebrow">Credentials</p>
+      <h2>Education &amp; Recognition</h2>
+    </div>
+    <div class="credentials-grid">
+      <div class="pa-card">
+        <h3>Education</h3>
+        <ul class="credentials-list">
+          {{ range .Params.education }}
+          <li><strong>{{ .degree }}</strong><span>{{ .year }}</span></li>
+          {{ end }}
+        </ul>
+      </div>
+      <div class="pa-card">
+        <h3>Bar Admissions</h3>
+        <ul class="credentials-list credentials-list--check">
+          {{ range .Params.admissions }}
+          <li>{{ partial "icon.html" "check" }} <span>{{ . }}</span></li>
+          {{ end }}
+        </ul>
+      </div>
+      <div class="pa-card">
+        <h3>Associations &amp; Honors</h3>
+        <ul class="credentials-list credentials-list--check">
+          {{ range .Params.associations }}
+          <li>{{ partial "icon.html" "check" }} <span>{{ . }}</span></li>
+          {{ end }}
+          {{ range .Params.recognitions }}
+          <li>{{ partial "icon.html" "check" }} <span>{{ . }}</span></li>
+          {{ end }}
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+{{ partial "cta-band.html" . }}
+
+{{ end }}

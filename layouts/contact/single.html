@@ -1,0 +1,116 @@
+{{ define "main" }}
+
+<section class="page-banner" style="background-image:url('{{ .Params.banner_image }}');">
+  <div class="wrap">
+    <div class="breadcrumb"><a href="/">Home</a> <span>/</span> <span>Contact</span></div>
+    <p class="eyebrow eyebrow--light">Get In Touch</p>
+    <h1>{{ .Title }} Carter Law Group</h1>
+    <p class="page-banner__lead">{{ .Params.lead }}</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap contact-grid">
+    <div>
+      <p class="eyebrow">Send a Message</p>
+      <h2>Tell Daniel About Your Case</h2>
+      <p style="color:var(--muted); margin-bottom:28px;">
+        The details you share here are kept confidential and are reviewed directly by
+        Daniel. This form does not create an attorney&ndash;client relationship until
+        a formal engagement is signed.
+      </p>
+
+      <div class="form-success" data-form-success tabindex="-1">
+        Thank you &mdash; your message has been received. Daniel's office will follow
+        up within one business day. For urgent matters, please call
+        <a href="tel:{{ .Site.Params.phoneHref }}">{{ .Site.Params.phoneDisplay }}</a> directly.
+      </div>
+
+      <form class="contact-form" data-contact-form novalidate>
+        <div class="form-row">
+          <div class="field">
+            <label for="name">Full Name</label>
+            <input type="text" id="name" name="name" autocomplete="name" required>
+          </div>
+          <div class="field">
+            <label for="phone">Phone Number</label>
+            <input type="tel" id="phone" name="phone" autocomplete="tel" required>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="field">
+            <label for="email">Email Address</label>
+            <input type="email" id="email" name="email" autocomplete="email" required>
+          </div>
+          <div class="field">
+            <label for="practice_area">Practice Area</label>
+            <select id="practice_area" name="practice_area" required>
+              <option value="" disabled selected>Select one</option>
+              {{ range .Params.practice_options }}
+              <option value="{{ . }}">{{ . }}</option>
+              {{ end }}
+            </select>
+          </div>
+        </div>
+        <div class="field">
+          <label for="message">Tell us briefly what happened</label>
+          <textarea id="message" name="message" rows="6" required></textarea>
+        </div>
+        <div class="field field--checkbox">
+          <input type="checkbox" id="consent" name="consent" required>
+          <label for="consent" style="font-weight:400;">
+            I understand this form does not create an attorney&ndash;client relationship
+            and I consent to being contacted about my inquiry.
+          </label>
+        </div>
+        <div>
+          <button type="submit" class="btn btn--gold">Send Message</button>
+          <p class="form-note" style="margin-top:12px;">Fields marked required must be completed before submitting.</p>
+        </div>
+      </form>
+    </div>
+
+    <div class="info-card">
+      <div>
+        <h3 style="color:var(--paper); margin-bottom:4px;">{{ .Site.Params.firmName }}</h3>
+        <p style="color:var(--muted-light); font-size:0.9rem;">{{ .Site.Params.barAdmission }}</p>
+      </div>
+      <hr>
+      <div class="info-card__item">
+        {{ partial "icon.html" "pin" }}
+        <div>
+          <strong>Office Address</strong>
+          <span>{{ .Site.Params.addressStreet }}<br>{{ .Site.Params.addressCity }}</span>
+        </div>
+      </div>
+      <div class="info-card__item">
+        {{ partial "icon.html" "phone" }}
+        <div>
+          <strong>Phone</strong>
+          <a href="tel:{{ .Site.Params.phoneHref }}">{{ .Site.Params.phoneDisplay }}</a>
+        </div>
+      </div>
+      <div class="info-card__item">
+        {{ partial "icon.html" "mail" }}
+        <div>
+          <strong>Email</strong>
+          <a href="mailto:{{ .Site.Params.email }}">{{ .Site.Params.email }}</a>
+        </div>
+      </div>
+      <div class="info-card__item">
+        {{ partial "icon.html" "clock" }}
+        <div>
+          <strong>Office Hours</strong>
+          <span>{{ .Site.Params.hoursWeekday }}<br>{{ .Site.Params.hoursWeekend }}</span>
+        </div>
+      </div>
+      <hr>
+      <p style="font-size:0.85rem; color:var(--muted-light); margin:0;">
+        Same-day appointments are often available for urgent criminal matters. Call
+        the office directly for the fastest response.
+      </p>
+    </div>
+  </div>
+</section>
+
+{{ end }}

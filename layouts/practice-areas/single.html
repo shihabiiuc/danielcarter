@@ -1,0 +1,55 @@
+{{ define "main" }}
+
+<section class="page-banner" style="background-image:url('{{ .Params.banner_image }}');">
+  <div class="wrap">
+    <div class="breadcrumb"><a href="/">Home</a> <span>/</span> <span>Practice Areas</span></div>
+    <p class="eyebrow eyebrow--light">What We Handle</p>
+    <h1>{{ .Title }}</h1>
+    <p class="page-banner__lead">{{ .Params.lead }}</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    {{ range .Site.Data.practice_areas }}
+    <article class="pa-detail" id="{{ .slug }}">
+      <div class="pa-detail__number">{{ .number }}</div>
+      <div>
+        <div class="pa-detail__head">
+          <span class="pa-detail__icon">{{ partial "icon.html" .icon }}</span>
+          <h3>{{ .title }}</h3>
+        </div>
+        <div class="pa-detail__body">
+          <p>{{ .description }}</p>
+          <ul class="pa-detail__list">
+            {{ range .bullets }}
+            <li>{{ partial "icon.html" "check" }} <span>{{ . }}</span></li>
+            {{ end }}
+          </ul>
+        </div>
+      </div>
+    </article>
+    {{ end }}
+  </div>
+</section>
+
+<section class="section section--paper2">
+  <div class="wrap">
+    <div class="section-head center">
+      <p class="eyebrow">Common Questions</p>
+      <h2>Frequently Asked Questions</h2>
+    </div>
+    <div class="faq">
+      {{ range .Site.Data.faq }}
+      <details class="faq-item">
+        <summary>{{ .question }}</summary>
+        <div class="faq-item__body">{{ .answer }}</div>
+      </details>
+      {{ end }}
+    </div>
+  </div>
+</section>
+
+{{ partial "cta-band.html" . }}
+
+{{ end }}

@@ -1,0 +1,133 @@
+{{ define "main" }}
+
+<section class="hero">
+  <div class="wrap hero__inner">
+    <div class="hero__content">
+      <p class="eyebrow">{{ .Params.hero_eyebrow }}</p>
+      <h1>{{ .Params.hero_heading }}</h1>
+      <p class="hero__subheading">{{ .Params.hero_subheading }}</p>
+      <div class="hero__actions">
+        <a class="btn btn--gold" href="/contact/">Free Consultation</a>
+        <a class="btn btn--outline" href="/practice-areas/">Explore Practice Areas</a>
+      </div>
+      <ul class="hero__trust">
+        <li>{{ partial "icon.html" "check" }} No fee unless we win your injury case</li>
+        <li>{{ partial "icon.html" "check" }} Direct access to your attorney</li>
+        <li>{{ partial "icon.html" "check" }} 15+ years in Cook County courts</li>
+      </ul>
+    </div>
+    <div class="hero__media">
+      <img src="{{ .Params.hero_image }}" alt="{{ .Params.hero_image_alt }}" width="900" height="563" fetchpriority="high">
+      <div class="hero__media-caption">
+        <strong>Est. {{ .Site.Params.founded }}</strong>
+        Serving Chicago &amp; Cook County
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="stats-band">
+  <div class="wrap stats-band__grid">
+    {{ range .Params.stats }}
+    <div class="stats-band__item">
+      <span class="stats-band__value">{{ .value }}</span>
+      <span class="stats-band__label">{{ .label }}</span>
+    </div>
+    {{ end }}
+  </div>
+</div>
+
+<section class="section">
+  <div class="wrap intro">
+    <div class="intro__media">
+      <img src="/images/attorney-daniel-carter.webp" alt="Portrait of attorney Daniel Carter" width="700" height="933" loading="lazy">
+    </div>
+    <div class="intro__body">
+      <p class="eyebrow">{{ .Site.Params.attorneyTitle }}</p>
+      <h2>{{ .Params.intro_heading }}</h2>
+      <p>{{ .Params.intro_body }}</p>
+      <div class="intro__quote">&ldquo;Clients deserve a lawyer who picks up the phone &mdash; not a call center.&rdquo;</div>
+      <div class="intro__signature">
+        <strong>{{ .Site.Params.attorneyName }}</strong>
+        <span>{{ .Site.Params.barAdmission }}</span>
+      </div>
+      <div class="hero__actions" style="margin-top:28px;">
+        <a class="btn btn--outline" href="/about/">More About Daniel</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section--paper2">
+  <div class="wrap">
+    <div class="section-head center">
+      <p class="eyebrow">What We Handle</p>
+      <h2>Practice Areas</h2>
+      <p>Five areas of focused practice, chosen because they're where clients need the most decisive help.</p>
+    </div>
+    <div class="pa-grid">
+      {{ range .Site.Data.practice_areas }}
+      <a class="pa-card" href="/practice-areas/#{{ .slug }}">
+        <span class="pa-card__number">{{ .number }}</span>
+        <span class="pa-card__icon">{{ partial "icon.html" .icon }}</span>
+        <h3>{{ .title }}</h3>
+        <p>{{ .summary }}</p>
+        <span class="pa-card__link">Learn more {{ partial "icon.html" "arrow" }}</span>
+      </a>
+      {{ end }}
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap why">
+    <div class="why__media">
+      <img src="/images/handshake.webp" alt="Attorney and client shaking hands after reaching an agreement" loading="lazy">
+    </div>
+    <div>
+      <p class="eyebrow">Why Clients Choose Carter Law Group</p>
+      <h2>{{ .Params.why_heading }}</h2>
+      <p style="color:var(--muted); font-size:1.05rem;">{{ .Params.why_lead }}</p>
+      <div class="why__list">
+        {{ range .Params.why_items }}
+        <div class="why__item">
+          <span class="why__icon">{{ partial "icon.html" .icon }}</span>
+          <div>
+            <h3>{{ .title }}</h3>
+            <p>{{ .body }}</p>
+          </div>
+        </div>
+        {{ end }}
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section--paper2">
+  <div class="wrap">
+    <div class="section-head center">
+      <p class="eyebrow">Client Experiences</p>
+      <h2>What Clients Say</h2>
+    </div>
+    <div class="testi-grid">
+      {{ range first 3 .Site.Data.testimonials }}
+      <div class="testi-card">
+        <span class="testi-card__quote-icon">{{ partial "icon.html" "quote" }}</span>
+        <div class="testi-card__stars">
+          {{ range seq .rating }}{{ partial "icon.html" "star" }}{{ end }}
+        </div>
+        <p class="testi-card__text">&ldquo;{{ .quote }}&rdquo;</p>
+        <span class="testi-card__name">{{ .name }}</span>
+        <span class="testi-card__context">{{ .context }}</span>
+      </div>
+      {{ end }}
+    </div>
+    <div style="text-align:center; margin-top:44px;">
+      <a class="btn btn--outline" href="/testimonials/">Read More Results</a>
+    </div>
+  </div>
+</section>
+
+{{ partial "cta-band.html" . }}
+
+{{ end }}

@@ -1,0 +1,48 @@
+<footer class="site-footer">
+  <div class="wrap site-footer__grid">
+    <div class="site-footer__brand">
+      <span class="brand__mark" aria-hidden="true">DC</span>
+      <p class="site-footer__firm">{{ .Site.Params.firmName }}</p>
+      <p class="site-footer__tagline">{{ .Site.Params.tagline }}</p>
+      <p class="site-footer__bar">{{ .Site.Params.barAdmission }}</p>
+    </div>
+
+    <div class="site-footer__col">
+      <h2 class="site-footer__heading">Explore</h2>
+      <ul>
+        {{ range .Site.Menus.main }}
+        <li><a href="{{ .URL }}">{{ .Name }}</a></li>
+        {{ end }}
+      </ul>
+    </div>
+
+    <div class="site-footer__col">
+      <h2 class="site-footer__heading">Practice Areas</h2>
+      <ul>
+        {{ range first 5 .Site.Data.practice_areas }}
+        <li><a href="/practice-areas/#{{ .slug }}">{{ .title }}</a></li>
+        {{ end }}
+      </ul>
+    </div>
+
+    <div class="site-footer__col site-footer__contact">
+      <h2 class="site-footer__heading">Contact</h2>
+      <address>
+        {{ .Site.Params.addressStreet }}<br>
+        {{ .Site.Params.addressCity }}
+      </address>
+      <a href="tel:{{ .Site.Params.phoneHref }}">{{ .Site.Params.phoneDisplay }}</a>
+      <a href="mailto:{{ .Site.Params.email }}">{{ .Site.Params.email }}</a>
+      <p class="site-footer__hours">{{ .Site.Params.hoursWeekday }}<br>{{ .Site.Params.hoursWeekend }}</p>
+    </div>
+  </div>
+
+  <div class="wrap site-footer__legal">
+    <p>&copy; {{ now.Format "2006" }} {{ .Site.Params.firmName }}. All rights reserved.</p>
+    <p class="site-footer__disclaimer">
+      Attorney advertising. Prior results do not guarantee a similar outcome. This
+      website is for informational purposes only and does not constitute legal advice
+      or form an attorney&ndash;client relationship.
+    </p>
+  </div>
+</footer>
