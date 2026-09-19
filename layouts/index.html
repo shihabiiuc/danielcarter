@@ -17,7 +17,12 @@
       </ul>
     </div>
     <div class="hero__media">
-      <img src="{{ .Params.hero_image }}" alt="{{ .Params.hero_image_alt }}" width="900" height="563" fetchpriority="high">
+      {{- $heroImg := resources.Get "images/hero-courthouse.webp" }}
+      {{- if $heroImg }}
+        {{- $heroSmall := $heroImg.Resize "840x webp q75" }}
+        {{- $heroLarge := $heroImg.Resize "1680x webp q75" }}
+      <img src="{{ $heroLarge.RelPermalink }}" srcset="{{ $heroSmall.RelPermalink }} 840w, {{ $heroLarge.RelPermalink }} 1680w" sizes="(max-width: 980px) 420px, 900px" alt="{{ .Params.hero_image_alt }}" width="900" height="563" fetchpriority="high">
+      {{- end }}
       <div class="hero__media-caption">
         <strong>Est. {{ .Site.Params.founded }}</strong>
         Serving Chicago &amp; Cook County
